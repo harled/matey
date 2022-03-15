@@ -1,9 +1,12 @@
 # Matey
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/matey`. To experiment with that code, run `bin/console` for an interactive prompt.
+📈 User Engagement Tracking Components for [Ahoy][https://github.com/ankane/ahoy] 🏴‍☠️
 
-TODO: Delete this and the text above, and describe your gem
+A suite of user engagment components to for plug and play use right from your Ahoy data! 
+No need to spend time finding what information you need and how to write the queries to set that up.
+Simply install the gem, input the required data and track how your users are responding to your application!
 
+Requires [Bootstrap 5.0 (Soft)][https://getbootstrap.com/docs/5.1/getting-started/introduction/] 🥾 , [Ahoy][https://github.com/ankane/ahoy] 🏴‍☠️, ...
 ## Installation
 
 Add this line to your application's Gemfile:
