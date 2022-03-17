@@ -1,6 +1,12 @@
 # Matey
 
-Matey offers a set of ViewComponents that aid reporting in standard service performance metrics, including:
+📈 User Engagement Tracking Components for [Ahoy][https://github.com/ankane/ahoy] 🏴‍☠️
+
+A suite of user engagment ViewComponents for plug and play use right from your Ahoy data! 
+No need to spend time finding what information you need and how to write the queries to set that up.
+Simply install the gem, input the required data and track how your users are responding to your application!
+
+This gem includes components for the following reports:
 
 * Active Users
 
@@ -35,7 +41,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/matey. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/matey/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/harled/matey. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/harled/matey/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -43,4 +49,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Matey project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/matey/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Matey project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/harled/matey/blob/master/CODE_OF_CONDUCT.md).
