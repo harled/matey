@@ -1,28 +1,31 @@
 # Matey
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/matey`. To experiment with that code, run `bin/console` for an interactive prompt.
+Matey offers a set of ViewComponents that aid reporting in standard service performance metrics, including:
 
-TODO: Delete this and the text above, and describe your gem
+* Active Users
+
+This gem assumes that event data is coming from [Ahoy](https://github.com/ankane/ahoy) which is a fantastic library
+for tracking visits and events. Your project must have Ahoy installed and configured in order to benefit from Matey.
+
+This gem assumes that you have [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) loaded 
+in your project. It will work without Bootstrap, however, you will need to provide your own custom styling for the 
+Bootstrap equivalent classes.
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'matey'
+gem 'matey', github: 'harled/matey', branch: 'main'
 ```
 
 And then execute:
 
     $ bundle install
 
-Or install it yourself as:
-
-    $ gem install matey
-
 ## Usage
 
-TODO: Write usage instructions here
+...
 
 ## Development
 
