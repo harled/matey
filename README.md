@@ -2,30 +2,36 @@
 
 📈 User Engagement Tracking Components for [Ahoy][https://github.com/ankane/ahoy] 🏴‍☠️
 
-A suite of user engagment components to for plug and play use right from your Ahoy data! 
+A suite of user engagment ViewComponents for plug and play use right from your Ahoy data! 
 No need to spend time finding what information you need and how to write the queries to set that up.
 Simply install the gem, input the required data and track how your users are responding to your application!
 
-Requires [Bootstrap 5.0 (Soft)][https://getbootstrap.com/docs/5.1/getting-started/introduction/] 🥾 , [Ahoy][https://github.com/ankane/ahoy] 🏴‍☠️, ...
+This gem includes components for the following reports:
+
+* Active Users
+
+This gem assumes that event data is coming from [Ahoy](https://github.com/ankane/ahoy) which is a fantastic library
+for tracking visits and events. Your project must have Ahoy installed and configured in order to benefit from Matey.
+
+This gem assumes that you have [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) loaded 
+in your project. It will work without Bootstrap, however, you will need to provide your own custom styling for the 
+Bootstrap equivalent classes.
+
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'matey'
+gem 'matey', github: 'harled/matey', branch: 'main'
 ```
 
 And then execute:
 
     $ bundle install
 
-Or install it yourself as:
-
-    $ gem install matey
-
 ## Usage
 
-TODO: Write usage instructions here
+...
 
 ## Development
 
