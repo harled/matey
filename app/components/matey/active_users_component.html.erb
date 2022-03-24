@@ -1,11 +1,38 @@
 <div class="card">
   <div class="card-body">
-    <h1 class="card-title">
-      <%= @current_period.to_s %>
-    </h1>
-    <p class="card-text">
-      <%= (@change_active_number > 0 ? "+" : "") + @change_active_number.to_s + " / " + @change_active_percent.to_s + "%" %>
-    </p>
-    <h5 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago</h5>
+    <div class="row">
+      <div class="col">
+        <h1><%= @current_period %></h1>
+      </div>
+      <div class="col-auto">
+        <p class="card-text text-end mb-0">
+          <%= (@change_active_number > 0 ? "+" : "") + @change_active_number.to_s + " / " + @change_active_percent.to_s + "%" %>
+        </p>
+        <small class="text-white">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
+      </div><!-- .col -->
+    </div><!-- .row -->
+    <h4 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago</h4>
   </div><!-- .card-body -->
 </div><!-- .card -->
+
+<style>
+    .card {
+      display: grid;
+      background-color: #FF4A4A;
+      color: white;
+      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+      border: 0;
+      border-radius: 0.5rem;
+      max-width: 16rem;
+      max-height: 20rem;
+    }
+    .text {
+      grid-column: span 2;
+    }
+    h4{
+      font-family: Verdana, sans-serif;
+    }
+    small{
+      font-size: 0.75rem
+    }
+  </style>
