@@ -1,5 +1,5 @@
 PATH
-  remote: /workspaces/matey
+  remote: ..
   specs:
     matey (0.1.1)
       ahoy_matey
@@ -146,6 +146,8 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.3-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     parallel (1.22.1)
@@ -275,6 +277,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
