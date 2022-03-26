@@ -1,0 +1,9 @@
+<% series = {"Sun, 29 Jul 2018"=>1, "Sun, 05 Aug 2018"=>6}%>
+<% options = {
+  title: 'Properties Growth',
+  subtitle: 'Grouped Per Week',
+  xtitle: 'Week',
+  ytitle: 'Properties',
+  stacked: true
+} %>
+<%= line_chart(series, options) %>
