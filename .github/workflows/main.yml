@@ -27,6 +27,6 @@ jobs:
         ruby-version: ${{ matrix.ruby }}
         bundler-cache: true
     - name: Create DB
-      run: bin/rails db:prepare
+      run: bundle exec rails db:test:prepare
     - name: Run tests
       run: bundle exec rake
