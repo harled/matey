@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require "rails_helper"
 require "matey"
 
 RSpec.configure do |config|
@@ -8,6 +9,8 @@ RSpec.configure do |config|
 
   # Disable RSpec exposing methods globally on `Module` and `main`
   config.disable_monkey_patching!
+
+  config.include ViewComponent::TestHelpers, type: :component
 
   config.expect_with :rspec do |c|
     c.syntax = :expect

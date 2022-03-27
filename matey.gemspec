@@ -31,11 +31,14 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  # Uncomment to register a new dependency of your gem
-  # spec.add_dependency "example-gem", "~> 1.0"
   spec.add_dependency "rails", "~> 7"
   spec.add_dependency "view_component"
   spec.add_dependency "ahoy_matey"
+
+  spec.add_development_dependency "rspec-rails", '~> 5.0'
+  spec.add_development_dependency "sprockets-rails", "~> 3.2.2"
+  spec.add_development_dependency "sqlite3"
+  spec.add_development_dependency "debug"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
