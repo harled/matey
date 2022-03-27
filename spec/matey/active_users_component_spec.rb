@@ -12,14 +12,14 @@ RSpec.describe Matey::ActiveUsersComponent, type: :component do
   context "raises an exception when" do
     it "events are missing" do
       expect { Matey::ActiveUsersComponent.new }.to raise_error(ArgumentError)
-    end 
+    end
 
     it "events are invalid" do
       expect { Matey::ActiveUsersComponent.new(events: nil) }.to raise_error(ArgumentError)
-    end 
+    end
 
     it "time_window is invalid" do
       expect { Matey::ActiveUsersComponent.new(events: [], time_window: nil) }.to raise_error(ArgumentError)
-    end 
+    end
   end
-end 
+end
