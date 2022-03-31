@@ -5,7 +5,7 @@ FactoryBot.define do
     # t.string "name"
     # t.text "properties"
     # t.datetime "time"
-    
+
     association :visit
     association :user
     name { "test_event" }
