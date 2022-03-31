@@ -36,6 +36,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ahoy_matey"
 
   spec.add_development_dependency "rspec-rails", "~> 5.0"
+  spec.add_development_dependency "factory_bot"
   spec.add_development_dependency "sprockets-rails", "~> 3.2.2"
   spec.add_development_dependency "sqlite3"
   spec.add_development_dependency "debug"

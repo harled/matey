@@ -52,6 +52,13 @@ sample application:
 3. rails s
 4. Open a browser to localhost:3000
 
+## Testing
+
+Use the folloiwng steps to run the test cases:
+
+1. rails db:test:prepare
+2. bundle exec rake
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/harled/matey. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/harled/matey/blob/master/CODE_OF_CONDUCT.md).

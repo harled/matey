@@ -7,3 +7,7 @@ abort("The Rails environment is running in production mode!") if Rails.env.produ
 
 require "rspec/rails"
 # require "view_component/test_helpers"
+
+# load all factory bot files
+SPEC_ROOT = Pathname.new(File.expand_path("../", __FILE__))
+Dir[SPEC_ROOT.join("support/*.rb")].sort.each { |f| require f }

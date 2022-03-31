@@ -1,6 +1,11 @@
 require "spec_helper"
 
 RSpec.describe Matey::ActiveUsersComponent, type: :component do
+  before(:all) do
+    @users = create_list(:user, 25)
+    @ahoy_visits = create_list(:ahoy_visit, 25)
+  end
+
   context "renders component" do
     it "with a card element" do
       subject = render_inline(Matey::ActiveUsersComponent.new(events: Ahoy::Event.all))
