@@ -1,0 +1,22 @@
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title">
+      <%= @current_period.to_s %>
+    </h1>
+    <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <th>Event</th>
+          <th class="text-end">#</th>
+        </tr>
+        <% @events.each do |action, count| %>
+          <tr>
+            <td><%= action %></td>
+            <td class="text-end"><%= count %></td>
+          </tr>
+        <% end %>
+      </table>
+      <h5 class="card-text my-2"><strong> Top Events </strong> since <%= time_ago_in_words(@time_window.ago) %> ago</h5>
+    </div>
+  </div><!-- .card-body -->
+</div><!-- .card -->

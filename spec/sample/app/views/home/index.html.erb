@@ -8,5 +8,8 @@
   <div class="col-3 d-flex align-items-stretch">
     <%= render(Matey::NewUsersComponent.new(users: User.all)) %>
   </div>
+  <div class="col-3 d-flex align-items-stretch">
+    <%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.month)) %>
+  </div>
 </div>
 
