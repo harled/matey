@@ -47,3 +47,4 @@
 
 # Ignore master key for decrypting credentials and more.
 /spec/sample/config/master.key
+.vscode/settings.json
