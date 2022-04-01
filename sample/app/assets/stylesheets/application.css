@@ -1,0 +1,22 @@
+#activeUsers {
+    display: grid;
+    background-color: #FF4A4A;
+    color: white;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 0.5rem;
+    font-family: Verdana, sans-serif;
+}
+
+#newUsers {
+    display: grid;
+    background-color: #FF4A4A;
+    color: white;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: 0.5rem;
+    font-family: Verdana, sans-serif;
+}
+
+#topVisitedPages {
+    background-color: #FF4A4A;
+    color: white;
+}

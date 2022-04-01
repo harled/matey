@@ -1,4 +1,4 @@
-<div class="card">
+<div id="activeUsers" class="card">
   <div class="card-body">
     <div class="row">
       <div class="col">
@@ -11,28 +11,6 @@
         <small class="text-white">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
       </div><!-- .col -->
     </div><!-- .row -->
-    <h4 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago</h4>
+    <h4 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h4>
   </div><!-- .card-body -->
 </div><!-- .card -->
-
-<style>
-    .card {
-      display: grid;
-      background-color: #FF4A4A;
-      color: white;
-      box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
-      border: 0;
-      border-radius: 0.5rem;
-      max-width: 16rem;
-      max-height: 20rem;
-    }
-    .text {
-      grid-column: span 2;
-    }
-    h4{
-      font-family: Verdana, sans-serif;
-    }
-    small{
-      font-size: 0.75rem
-    }
-  </style>
