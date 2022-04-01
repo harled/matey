@@ -47,10 +47,17 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 A sample application is included in this repository to help with exploring the components and testing. To use the 
 sample application: 
 
-1. cd sample
+1. cd spec/sample
 2. bundle
 3. rails s
 4. Open a browser to localhost:3000
+
+## Testing
+
+Use the folloiwng steps to run the test cases:
+
+1. rails db:test:prepare
+2. bundle exec rake
 
 ## Contributing
 

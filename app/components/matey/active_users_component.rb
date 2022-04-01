@@ -1,7 +1,10 @@
-require 'ahoy_matey'
+require "ahoy_matey"
 
 class Matey::ActiveUsersComponent < ApplicationComponent
   def initialize(events:, time_window: 1.week)
+    raise ArgumentError unless events.is_a?(ActiveRecord::Relation)
+    raise ArgumentError unless time_window.is_a?(Integer)
+
     @current_period = events.where(time: time_window.ago..Time.current).pluck(:user_id).uniq.count
     previous_period = events.where(time: (2 * time_window).ago..time_window.ago).pluck(:user_id).uniq.count
 
