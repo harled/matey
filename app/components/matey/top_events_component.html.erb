@@ -1,8 +1,10 @@
-<div class="card">
+<div class="card h-100">
+  <div class="card-header">
+    <h3 class="card-title">
+      Top Events
+    </h3>
+  </div>
   <div class="card-body">
-    <h1 class="card-title">
-      <%= @current_period.to_s %>
-    </h1>
     <div class="table-responsive">
       <table class="table">
         <tr>
@@ -16,7 +18,7 @@
           </tr>
         <% end %>
       </table>
-      <h5 class="card-text my-2"><strong> Top Events </strong> since <%= time_ago_in_words(@time_window.ago) %> ago</h5>
+      <small class="fst-italic">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
     </div>
   </div><!-- .card-body -->
 </div><!-- .card -->

@@ -1,4 +1,9 @@
-<div class="card">
+<div class="card h-100">
+  <div class="card-header">
+    <h3 class="card-title">
+      New Users
+    </h3>
+  </div>
   <div class="card-body">
     <div class="row">
       <div class="col">
@@ -8,9 +13,8 @@
         <p class="card-text text-end mb-0">
           <%= (@change_new_number > 0 ? "+" : "") + @change_new_number.to_s + " / " + @change_new_percent.to_s + "%" %>
         </p>
-        <small class="text-muted">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
       </div><!-- .col -->
     </div><!-- .row -->
-    <h5 class="card-text my-2"><strong> New Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago</h5>
+    <small class="fst-italic">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
   </div><!-- .card-body -->
 </div><!-- .card -->

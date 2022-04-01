@@ -1,15 +1,32 @@
+<h3>1 Week</h3>
 <div class="row mt-4">
-  <div class="col-3 d-flex align-items-stretch">
-    <%= render(Matey::ActiveUsersComponent.new(events: Ahoy::Event.all)) %>
+  <div class="col-3">
+    <%= render(Matey::ActiveUsersComponent.new(events: Ahoy::Event.all, time_window: 1.week)) %>
   </div>
-  <div class="col-3 d-flex align-items-stretch">
-    <%= render(Matey::ActiveUsersComponent.new(events: Ahoy::Event.all, time_window: 1.month)) %>
-  </div>
-  <div class="col-3 d-flex align-items-stretch">
+  <div class="col-3">
     <%= render(Matey::NewUsersComponent.new(users: User.all)) %>
   </div>
-  <div class="col-3 d-flex align-items-stretch">
+  <div class="col-3">
+    <%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.week)) %>
+  </div>
+  <div class="col-3">
+    <%= render(Matey::TopPagesComponent.new(events: Ahoy::Event.all, time_window: 1.week)) %>
+  </div>
+</div>
+
+<h3>1 Month</h3>
+<div class="row mt-4">
+  <div class="col-3">
+    <%= render(Matey::ActiveUsersComponent.new(events: Ahoy::Event.all, time_window: 1.month)) %>
+  </div>
+  <div class="col-3">
+    <%= render(Matey::NewUsersComponent.new(users: User.all)) %>
+  </div>
+  <div class="col-3">
     <%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.month)) %>
+  </div>
+  <div class="col-3">
+    <%= render(Matey::TopPagesComponent.new(events: Ahoy::Event.all, time_window: 1.month)) %>
   </div>
 </div>
 

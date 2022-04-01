@@ -1,4 +1,9 @@
-<div class="card">
+<div class="card h-100">
+  <div class="card-header">
+    <h3 class="card-title">
+      Active Users
+    </h3>
+  </div>
   <div class="card-body">
     <h1 class="card-title">
       <%= @current_period.to_s %>
@@ -6,6 +11,6 @@
     <p class="card-text">
       <%= (@change_active_number > 0 ? "+" : "") + @change_active_number.to_s + " / " + @change_active_percent.to_s + "%" %>
     </p>
-    <h5 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago</h5>
+    <small class="fst-italic">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
   </div><!-- .card-body -->
 </div><!-- .card -->

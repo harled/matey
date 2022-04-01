@@ -1,0 +1,32 @@
+<div class="card h-100">
+  <div class="card-header">
+    <h3 class="card-title">
+      Top Pages
+    </h3>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Page</th>
+            <th class="text-end">#</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @user_count_by_event.each do |controller_name_and_action, count| %>
+            <tr>
+              <td><%= controller_name_and_action.join("#") %></td>
+              <td class="text-end"><%= count %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td><strong>Total:</strong></td>
+            <td class="text-end"><%=  @user_count_by_event.sum {|controller_name_and_action, count| count} %></td>
+          </tr>
+        </tbody>
+      </table>
+      <small class="fst-italic">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
+    </div>
+  </div><!-- .card-body -->
+</div><!-- .card -->
