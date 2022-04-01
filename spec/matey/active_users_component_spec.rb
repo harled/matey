@@ -4,6 +4,7 @@ RSpec.describe Matey::ActiveUsersComponent, type: :component do
   before(:all) do
     @users = create_list(:user, 25)
     @ahoy_visits = create_list(:ahoy_visit, 25)
+    @ahoy_events = create_list(:ahoy_event, 25)
   end
 
   context "renders component" do
