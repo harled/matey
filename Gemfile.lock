@@ -214,6 +214,7 @@ PLATFORMS
 
 DEPENDENCIES
   gruff
+  groupdate
   matey!
   rake (~> 13.0)
   rmagick

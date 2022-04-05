@@ -8,6 +8,7 @@ gemspec
 gem "rmagick"
 
 gem "gruff"
+gem 'groupdate'
 
 gem "rake", "~> 13.0"
 
