@@ -4,6 +4,7 @@ require_relative "matey/version"
 
 require_relative "../app/components/application_component"
 require_relative "../app/components/matey/active_users_component"
+require_relative "../app/components/matey/active_users_over_time_component"
 require_relative "../app/components/matey/new_users_component"
 
 module Matey

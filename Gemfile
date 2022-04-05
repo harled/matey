@@ -5,6 +5,10 @@ source "https://rubygems.org"
 # Specify your gem's dependencies in matey.gemspec
 gemspec
 
+gem "rmagick"
+
+gem "gruff"
+
 gem "rake", "~> 13.0"
 
 gem "rspec", "~> 3.0"
