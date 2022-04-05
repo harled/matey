@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class TopVisitedPagesTableComponent < ViewComponent::Base
     def initialize(events:, time_window: 1.week)
         # Scope events to time period given

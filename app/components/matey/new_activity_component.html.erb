@@ -1,0 +1,16 @@
+<div id="newActivity" class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col">
+        <h1><%= @current_period %></h1>
+      </div>
+      <div class="col-auto">
+        <p class="card-text text-end mb-0">
+          <%= (@change_active_number > 0 ? "+" : "") + @change_active_number.to_s + " / " + @change_active_percent.to_s + "%" %>
+        </p>
+        <small class="text-white">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
+      </div><!-- .col -->
+    </div><!-- .row -->
+    <h4 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h4>
+  </div><!-- .card-body -->
+</div><!-- .card -->
