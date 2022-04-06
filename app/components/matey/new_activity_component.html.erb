@@ -8,9 +8,9 @@
         <p class="card-text text-end mb-0">
           <%= (@change_active_number > 0 ? "+" : "") + @change_active_number.to_s + " / " + @change_active_percent.to_s + "%" %>
         </p>
-        <small class="text-white">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
+        <small class="text-white">since <%= time_ago_in_words(@time_window.ago).titleize %> ago</small>
       </div><!-- .col -->
     </div><!-- .row -->
-    <h4 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h4>
+    <h4 class="card-text my-2"><strong> New Activity </strong> since <%= time_ago_in_words(@time_window.ago).titleize %> ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h4>
   </div><!-- .card-body -->
 </div><!-- .card -->

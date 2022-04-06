@@ -1,11 +1,9 @@
-<div class="card w-50 h-25">
+<div class="card">
   <div class="card-body">
-    <h1 class="card-title">
-      Top 10 Page Visits In the Last Week
-    </h1>
+    <h5>Top Landing Page Visits Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h5>
     <div>
-      <table class="table">
-        <thead>
+      <table class="table table-hover table-borderless">
+        <thead class="table-dark">
           <tr>
             <th>Path/Page</th>
             <th>Count</th>
@@ -14,11 +12,11 @@
         <tbody>
           <% @user_count_by_event.each do |controller_name_and_action, count| %>
             <tr>
-              <td><%= controller_name_and_action.join("#") %></td>
+              <td><%= controller_name_and_action %></td>
               <td><%= count %></td>
             </tr>
           <% end %>
-          <tr>
+          <tr class="table-dark">
             <td><strong>Total:</strong></td>
             <td><%=  @user_count_by_event.sum {|controller_name_and_action, count| count} %></td>
           </tr>
