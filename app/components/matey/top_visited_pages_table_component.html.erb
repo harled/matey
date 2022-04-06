@@ -2,7 +2,7 @@
   <div class="card-body">
     <h5>Top Landing Page Visits Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h5>
     <div>
-      <table class="table table-hover table-borderless">
+      <table class="table table-hover table-borderless table-sm">
         <thead class="table-dark">
           <tr>
             <th>Path/Page</th>
