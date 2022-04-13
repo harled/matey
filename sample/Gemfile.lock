@@ -3,7 +3,6 @@ PATH
   specs:
     matey (0.1.1)
       ahoy_matey
-      rails (~> 7)
       view_component
 
 GEM
