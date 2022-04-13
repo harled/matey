@@ -6,6 +6,6 @@
     <p class="card-text">
       <%= (@change_active_number > 0 ? "+" : "") + @change_active_number.to_s + " / " + @change_active_percent.to_s + "%" %>
     </p>
-    <h5 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago</h5>
+    <h5 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago).titleize %> ago</h5>
   </div><!-- .card-body -->
 </div><!-- .card -->
