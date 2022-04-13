@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card bg-primary text-light">
   <div class="card-body">
     <h5>Top Landing Page Visits Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h5>
     <div>
@@ -9,7 +9,7 @@
             <th>Count</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody class="text-light">
           <% @user_count_by_event.each do |controller_name_and_action, count| %>
             <tr>
               <td><%= controller_name_and_action %></td>
