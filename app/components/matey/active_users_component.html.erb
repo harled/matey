@@ -1,11 +1,15 @@
-<div class="card">
+<div class="card bg-primary text-light">
   <div class="card-body">
-    <h1 class="card-title">
-      <%= @current_period.to_s %>
-    </h1>
-    <p class="card-text">
-      <%= (@change_active_number > 0 ? "+" : "") + @change_active_number.to_s + " / " + @change_active_percent.to_s + "%" %>
-    </p>
-    <h5 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago</h5>
+    <div class="row">
+      <div class="col">
+        <h1><%= @current_period %></h1>
+      </div>
+      <div class="col-auto">
+        <p class="card-text text-end mb-0">
+          <%= (@change_active_number > 0 ? "+" : "") + @change_active_number.to_s + " / " + @change_active_percent.to_s + "%" %>
+        </p>
+      </div><!-- .col -->
+    </div><!-- .row -->
+    <h4 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago).titleize %> ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h4>
   </div><!-- .card-body -->
 </div><!-- .card -->
