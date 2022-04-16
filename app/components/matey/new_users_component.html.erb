@@ -1,9 +1,4 @@
-<div class="card h-100">
-  <div class="card-header">
-    <h3 class="card-title">
-      New Users
-    </h3>
-  </div>
+<div class="card bg-primary text-light">
   <div class="card-body">
     <div class="row">
       <div class="col">
@@ -15,6 +10,6 @@
         </p>
       </div><!-- .col -->
     </div><!-- .row -->
-    <small class="fst-italic">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
+    <h4 class="card-text my-2"><strong> New Users </strong> since <%= time_ago_in_words(@time_window.ago).titleize %> ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h4>
   </div><!-- .card-body -->
 </div><!-- .card -->

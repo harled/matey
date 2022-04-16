@@ -1,24 +1,29 @@
-<div class="card h-100">
-  <div class="card-header">
-    <h3 class="card-title">
-      Top Events
-    </h3>
-  </div>
+
+
+<div class="card bg-primary text-light">
   <div class="card-body">
-    <div class="table-responsive">
-      <table class="table">
-        <tr>
-          <th>Event</th>
-          <th class="text-end">#</th>
-        </tr>
-        <% @events.each do |action, count| %>
+    <h5>Top Events Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h5>
+    <div>
+      <table class="table table-hover table-borderless table-sm">
+        <thead class="table-dark">
           <tr>
-            <td><%= action %></td>
-            <td class="text-end"><%= count %></td>
+            <th>Event</th>
+            <th>Count</th>
           </tr>
-        <% end %>
+        </thead>
+        <tbody class="text-light">
+          <% @events.each do |action, count| %>
+            <tr>
+              <td><%= action %></td>
+              <td class="text-end"><%= count %></td>
+            </tr>
+          <% end %>
+          <tr class="table-dark">
+            <td><strong>Total:</strong></td>
+            <td class="text-end"><%=  @events.sum {|controller_name_and_action, count| count} %></td>
+          </tr>
+        </tbody>
       </table>
-      <small class="fst-italic">since <%= time_ago_in_words(@time_window.ago) %> ago</small>
     </div>
   </div><!-- .card-body -->
 </div><!-- .card -->
