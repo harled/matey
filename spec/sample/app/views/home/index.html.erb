@@ -1,9 +1,8 @@
-<h3>1 Week</h3>
 <div class="row mt-4">
-  <div class="col-3">
-    <%= render(Matey::ActiveUsersComponent.new(events: Ahoy::Event.all, time_window: 1.week)) %>
+  <div class="col-2 d-flex align-items-stretch">
+    <%= render(Matey::ActiveUsersComponent.new(events: Ahoy::Event.all)) %>
   </div>
-  <div class="col-3 d-flex align-items-stretch">
+  <div class="col-2 d-flex align-items-stretch">
     <%= render(Matey::NewActivityComponent.new(events: Ahoy::Event.all, time_window: 1.month)) %>
   </div>
   <div class="col-3 d-flex align-items-stretch">
@@ -11,5 +10,8 @@
   </div>
   <div class="col-3 d-flex align-items-stretch">
     <%= render(Matey::NewUsersComponent.new(users: User.all, time_window: 2.months )) %>
+  </div>
+  <div class="col-2 d-flex align-items-stretch">
+    <%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.month )) %>
   </div>
 </div>
