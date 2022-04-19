@@ -1,4 +1,7 @@
 # Matey
+![GitHub Repo stars](https://img.shields.io/github/stars/harled/matey?logoColor=purple&style=social)
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/harled/matey)
+![GitHub issues](https://img.shields.io/github/issues-raw/harled/matey)
 
 📈 User Engagement Tracking Components for [Ahoy](https://github.com/ankane/ahoy) 🏴‍☠️
 
