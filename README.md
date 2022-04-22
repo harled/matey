@@ -93,7 +93,7 @@ The Top Visited Pages Table Component component will take advantage of **`Ahoy::
 
 ### Top Events Component
 
-![Top Events Component](./images/topEvents.png)
+![Top Events Component](./images/topEventsComponent.png)
 
 The Top Events Component component will give you a list of the top Ahoy::Event's that are triggered by your users. Just pass in the Ahoy::Event.all and the component will calculate the top events that have been triggered in the given time window. The *`limit`* parameter limits the number of results and is 10 by default. The implementation should look like:
 
