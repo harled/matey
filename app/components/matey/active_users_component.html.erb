@@ -1,4 +1,5 @@
 <div id="activeUsers" class="card">
+<div class="card bg-primary text-light">
   <div class="card-body">
     <div class="row">
       <div class="col">
@@ -12,5 +13,8 @@
       </div><!-- .col -->
     </div><!-- .row -->
     <h4 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago) %> ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h4>
+      </div><!-- .col -->
+    </div><!-- .row -->
+    <h4 class="card-text my-2"><strong> Active Users </strong> since <%= time_ago_in_words(@time_window.ago).titleize %> ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h4>
   </div><!-- .card-body -->
 </div><!-- .card -->
