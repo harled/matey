@@ -47,6 +47,9 @@
 
 # Ignore master key for decrypting credentials and more.
 /spec/sample/config/master.key
-sample/tmp/
 vendor/cache/
+sample/db/
+sample/tmp/
+sample/log/
+.DS_Store
 .vscode/settings.json
