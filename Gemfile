@@ -24,4 +24,4 @@ if RUBY_VERSION >= "3.1"
   gem "net-smtp", require: false
 end
 
-gem "byebug", "~> 11.1", :groups => [:development, :test]
+gem "byebug", "~> 11.1", groups: [:development, :test]
