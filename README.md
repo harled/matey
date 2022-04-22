@@ -34,7 +34,7 @@ Look here to see what components Matey offers and how to use them 🛠️
 Some common flows to recognize how the named paramaters work for the components. This is what a Matey view component render line would look like in your view file:
 
 ```
-<%= render Matey::ComponentName.new(data: Ahoy::Events.all, time_window: 1.week) %>
+<%= render Matey::ComponentName.new(events: Ahoy::Event.all, time_window: 1.week) %>
 ```
 
 Here we can see that all components begin with **`Matey::`** followed by the name of the component. The **`data`** parameter will take in Ahoy data as an ***ActiveRecordRelation*** collection. 
@@ -54,7 +54,7 @@ Also, if you have a lot of data, you can cut down the data that you are passing 
 The New Users component will calculate the number of new users that have been created in the given time window and show you the amount and percentage change from the previous time period. The code should look like this:
 
 ```
-<%= render Matey::NewUsersComponent.new(events: User.all, time_window: 2.month) %>
+<%= render Matey::NewUsersComponent.new(users: User.all, time_window: 2.month) %>
 ```
 
 Here we are passing in all of our **User** model data for the component to find the new users that were made in the last 2 months, but we can filter this data to only include a specific subset of users or from a specific time period. The component will find the new users created in the past month and show us the increase/decrease since the last period.
@@ -65,7 +65,7 @@ Here we are passing in all of our **User** model data for the component to find 
 The Active Users component will calculate the number of active users that have been created in the given time window and show you the amount and percentage change from the previous time period. This component counts active users as those who have been involved in an Ahoy event in the given time window. The code should look like this:
 
 ```
-<%= render Matey::ActiveUsersComponent.new(users: Ahoy::Event.all, time_window: 1.month) %>
+<%= render Matey::ActiveUsersComponent.new(events: Ahoy::Event.all, time_window: 1.month) %>
 ```
 
 Here we are passing in all of our **Ahoy::Event** model data for the component to find the user that were triggered some Ahoy Event, but we can filter this data to only include a specific subset of Ahoy Events or from a specific time period. The component will find the active users created in the past month and show us the increase/decrease since the last period.
@@ -77,7 +77,7 @@ Here we are passing in all of our **Ahoy::Event** model data for the component t
 The New Activity component will calculate the number of Ahoy events that have been created in the given time window and show you the amount and percentage change from the previous time period. The implementation should look like:
 
 ```
-<%= render Matey::NewActivityComponent.new(users: Ahoy::Event.all, time_window: 1.month) %>
+<%= render Matey::NewActivityComponent.new(events: Ahoy::Event.all, time_window: 1.month) %>
 ```
 
 Here we are passing in all of our **Ahoy::Event** model data for the component to count all Ahoy Event, but we can filter this data to only include a specific subset of Ahoy Events or from a specific time period. The component will find the Ahoy events created in the past month and show us the increase/decrease since the last period.
@@ -85,11 +85,22 @@ Here we are passing in all of our **Ahoy::Event** model data for the component t
 
 ![Top Visited Landing Pages Component](./images/topVisitedPages.png)
 
-The Top Visited Pages Table Component component will take advantage of **`Ahoy::Visit`** and gives you a list of the top visited paths. Just pass in the Ahoy::Visit.all and the component will calculate the top landing pages based on the visits that have been created in the given time window. The number_of_events parameter limits the number of results and is 10 by default. The implementation should look like:
+The Top Visited Pages Table Component component will take advantage of **`Ahoy::Visit`** and gives you a list of the top visited paths. Just pass in the Ahoy::Visit.all and the component will calculate the top landing pages based on the visits that have been created in the given time window. The *`limit`* parameter limits the number of results and is 10 by default. The implementation should look like:
 
 ```
-<%= render(Matey::TopVisitedPagesTableComponent.new(events: Ahoy::Visit.all, time_window: 1.month, number_of_events: 10)) %>
+<%= render(Matey::TopVisitedPagesTableComponent.new(events: Ahoy::Visit.all, time_window: 1.month, limit: 10)) %>
 ```
+
+### Top Events Component
+
+![Top Events Component](./images/topEvents.png)
+
+The Top Events Component component will give you a list of the top Ahoy::Event's that are triggered by your users. Just pass in the Ahoy::Event.all and the component will calculate the top events that have been triggered in the given time window. The *`limit`* parameter limits the number of results and is 10 by default. The implementation should look like:
+
+```
+<%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.month, limit: 10)) %>
+```
+
 ### Custom Card Component
 *Coming Soon...*
 ### Custom Table Component
