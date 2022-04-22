@@ -3,11 +3,11 @@ require_relative "lib/matey/version"
 Gem::Specification.new do |spec|
   spec.name = "matey"
   spec.version = Matey::VERSION
-  spec.authors = ["Chris Young"]
-  spec.email = ["chris@harled.ca"]
+  spec.authors = ["Suvasan Krishnasamy", "Jon Loos", "Caitlin Henry", "Chris Young"]
+  spec.email = ["suvasan@harled.ca", "jon@harled.ca", "caitlin@harled.ca", "chris@harled.ca"]
 
-  spec.summary = "A gem to track user engagement using Ahoy."
-  spec.description = "This gem provides a number of ViewComponents that are helpful in viewing user engagement metrics from Ahoy."
+  spec.summary = "Track user engagement using Ahoy and ViewComponents."
+  spec.description = "ViewComponents that helpful in viewing user engagement metrics from Ahoy."
   spec.homepage = "https://github.com/harled/matey"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
