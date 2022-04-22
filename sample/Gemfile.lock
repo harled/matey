@@ -1,5 +1,5 @@
 PATH
-  remote: /workspaces/matey
+  remote: ..
   specs:
     matey (0.1.1)
       ahoy_matey
@@ -83,6 +83,7 @@ GEM
     bootsnap (1.11.1)
       msgpack (~> 1.2)
     builder (3.2.4)
+    byebug (11.1.3)
     capybara (3.36.0)
       addressable
       matrix
@@ -143,6 +144,8 @@ GEM
       net-protocol
       timeout
     nio4r (2.5.8)
+    nokogiri (1.13.3-x86_64-darwin)
+      racc (~> 1.4)
     nokogiri (1.13.3-x86_64-linux)
       racc (~> 1.4)
     public_suffix (4.0.6)
@@ -228,10 +231,12 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
+  x86_64-darwin-21
   x86_64-linux
 
 DEPENDENCIES
   bootsnap
+  byebug (~> 11.1)
   capybara
   debug
   importmap-rails
