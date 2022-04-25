@@ -2,8 +2,8 @@ PATH
   remote: .
   specs:
     matey (0.1.1)
-      ahoy_matey
-      view_component
+      ahoy_matey (~> 4.0)
+      view_component (~> 2.0)
 
 GEM
   remote: https://rubygems.org/
@@ -241,7 +241,7 @@ PLATFORMS
 DEPENDENCIES
   byebug (~> 11.1)
   debug
-  factory_bot
+  factory_bot (~> 6.0)
   factory_bot_rails
   matey!
   net-imap

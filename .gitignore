@@ -53,3 +53,5 @@ sample/log/
 .DS_Store
 .vscode/settings.json
 sample/.byebug_history
+
+*.gem
