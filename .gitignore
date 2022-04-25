@@ -48,3 +48,10 @@
 # Ignore master key for decrypting credentials and more.
 /spec/sample/config/master.key
 vendor/cache/
+sample/tmp/
+sample/log/
+.DS_Store
+.vscode/settings.json
+sample/.byebug_history
+
+*.gem
