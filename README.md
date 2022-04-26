@@ -1,10 +1,17 @@
 # Matey
 
+![GitHub closed issues](https://img.shields.io/github/issues-closed-raw/harled/matey) 
+![GitHub issues](https://img.shields.io/github/issues-raw/harled/matey) 
+![GitHub Repo stars](https://img.shields.io/github/stars/harled/matey?logoColor=purple&style=social)
+
 📈 User Engagement Tracking Components for [Ahoy](https://github.com/ankane/ahoy) 🏴‍☠️
 
 A suite of user engagment ViewComponents for plug and play use right from your Ahoy data! 
 No need to spend time finding what information you need and how to write the queries to set that up.
 Simply install the gem, input the required data and track how your users are responding to your application!
+
+Project Lead: Caitlin Henry  
+[**caitmich**](https://github.com/caitmich) | (*caitlin@harled.ca*)
 
 This gem assumes that event data is coming from [Ahoy](https://github.com/ankane/ahoy) which is a fantastic library
 for tracking visits and events. Your project must have Ahoy installed and configured in order to benefit from Matey.
