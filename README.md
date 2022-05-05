@@ -4,25 +4,23 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/harled/matey) 
 ![GitHub Repo stars](https://img.shields.io/github/stars/harled/matey?logoColor=purple&style=social)
 
-📈 User Engagement Tracking Components for [Ahoy](https://github.com/ankane/ahoy) 🏴‍☠️
+📈 User Engagement Tracking Components for your Ahoy data 🏴‍☠️
 
-A suite of user engagment ViewComponents for plug and play use right from your Ahoy data! 
-No need to spend time finding what information you need and how to write the queries to set that up.
-Simply install the gem, input the required data and track how your users are responding to your application!
+This gem provides a suite of ViewComponents to observe user engagement in your Ahoy powered Ruby on Rails application.
 
-Project Lead: Caitlin Henry  
-[**caitmich**](https://github.com/caitmich) | (*caitlin@harled.ca*)
-
-This gem assumes that event data is coming from [Ahoy](https://github.com/ankane/ahoy) which is a fantastic library
-for tracking visits and events. Your project must have Ahoy installed and configured in order to benefit from Matey.
-
-This gem assumes that you have [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) loaded in your project. It will work without Bootstrap, however, you will need to provide your own custom styling for the Bootstrap equivalent classes.
+In order to use this gem you must:
+* Have [Ahoy](https://github.com/ankane/ahoy) installed, configured and tracking visit and event data
+* Have [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) available for styling
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
+# latest from rubygems
+gem 'matey'
+
+# latest from github
 gem 'matey', github: 'harled/matey', branch: 'main'
 ```
 
@@ -30,88 +28,105 @@ And then execute:
 
     $ bundle install
 
-You will now have the latest version of Matey on your project. Checkout the Usage section to see what components there are and how to use them in your app!
+You now have the latest version of Matey. Checkout the [Usage](#usage) section to see what components there are and how to use them in your app.
 
 ## Usage
 
 Look here to see what components Matey offers and how to use them 🛠️
 
-### Common Flows
+### Basics
 
-Some common flows to recognize how the named paramaters work for the components. This is what a Matey view component render line would look like in your view file:
+Some common flows to recognize how the named parameters work for the components. This is what a Matey view component render line would look like in your view file:
+
+All of the Matey components follow the same pattern. The following is an example of calling the `ActiveUsersComponent` to report on the last week of data based on all Ahoy events.
 
 ```
-<%= render Matey::ComponentName.new(events: Ahoy::Event.all, time_window: 1.week) %>
+# dashboard.html.erb
+<%= render Matey::ActiveUsersComponent.new(events: Ahoy::Event.all, time_window: 1.week) %>
 ```
 
-Here we can see that all components begin with **`Matey::`** followed by the name of the component. The **`data`** parameter will take in Ahoy data as an ***ActiveRecordRelation*** collection. 
+All components begin with **`Matey::`** followed by the name of the component. The **`data`** parameter varies but will always expect the parameter to be an ***ActiveRecordRelation*** collection. 
 
-The **`time_window`** takes in an amount of time that the component will look calculate the data for and uses this to set the specific date range that the data will be taken from. This is an optional parameter and the default will be a 1 week time window.
+The **`time_window`** parameter is the time range to filter data based on. This is an optional parameter. The default is a 1 week time window.
 
-In this example, the component will take the **`Ahoy::Events`** data and show information about the week of data.
+**Note**: The more data you have the more interesting the components are. A common and helpful pattern is to capture events on all controller actions. Details on doing this can be seen [here](https://github.com/ankane/ahoy#ruby).
 
-**Note**: The data the component is completely limited by the extent of your [Ahoy](https://github.com/ankane/ahoy) data. Setting up events on each controller action can be seen [here](https://github.com/ankane/ahoy#ruby) and can be done in the base controller so that all other controllers inherit from here and will create Ahoy events.
+If you have a lot of visit/event data, you can always control the load time of components by reducing the `time_window` (i.e. using a range of a year could be a lot of data!).
 
-Also, if you have a lot of data, you can cut down the data that you are passing through by reducing the time the events have occurred, however the comparison between the current and previous `time_window` will require two time windows worth of data (ie. for data from last week, this will compare to data from 2 weeks ago)
+## Components
 
-### New Users Component
+The following components are available;
+
+* [NewUsersComponent](#newuserscomponent)
+* [ActiveUsersComponent](#activeuserscomponent)
+* [NewActivityComponent](#newactivitycomponent)
+* [TopVisitedLandingPagesComponent](#topvisitedlandingpagescomponent)
+* [TopEventsComponent](#topeventscomponent)
+* [CustomCardComponent](#customcardcomponent)
+* [CustomTableComponent](#customtablecomponent)
+
+### NewUsersComponent
 
 ![New Users Component](./images/newUsersComponent.png)
 
-The New Users component will calculate the number of new users that have been created in the given time window and show you the amount and percentage change from the previous time period. The code should look like this:
+The NewUsersComponent displays the number of new users that have been created in the parameter time window. It also displays the amount and percentage change from the previous time period. 
 
 ```
 <%= render Matey::NewUsersComponent.new(users: User.all, time_window: 2.month) %>
 ```
 
-Here we are passing in all of our **User** model data for the component to find the new users that were made in the last 2 months, but we can filter this data to only include a specific subset of users or from a specific time period. The component will find the new users created in the past month and show us the increase/decrease since the last period.
-### Active Users
+Here we are passing in all of our **User** model data for the component to find the new users that were made in the last 2 months, but we can filter this data to only include a specific subset of users or from a specific time period. The component finds new users created in the past month and show us the increase/decrease since the last period based on the `created_at` attribute.
 
-![Active Users Component](./images/activeUsersComponent.png)
+### ActiveUsersComponent
 
-The Active Users component will calculate the number of active users that have been created in the given time window and show you the amount and percentage change from the previous time period. This component counts active users as those who have been involved in an Ahoy event in the given time window. The code should look like this:
+![ActiveUsersComponent](./images/activeUsersComponent.png)
+
+The ActiveUsersComponent displays the number of active users that have been created in the parameter time window.  It also displays the amount and percentage change from the previous time period. This component counts active users as those who have been involved in an Ahoy event in the given time window.
 
 ```
 <%= render Matey::ActiveUsersComponent.new(events: Ahoy::Event.all, time_window: 1.month) %>
 ```
 
-Here we are passing in all of our **Ahoy::Event** model data for the component to find the user that were triggered some Ahoy Event, but we can filter this data to only include a specific subset of Ahoy Events or from a specific time period. The component will find the active users created in the past month and show us the increase/decrease since the last period.
+Here we are passing in all of our **Ahoy::Event** model data which is used to determine what users triggered an event in the parameter time period. The component finds the active users created in the past month and show us the increase/decrease since the last period.
 
-### New Activity Component
+### NewActivityComponent
 
 ![New Activity Component](./images/newActivityComponent.png)
 
-The New Activity component will calculate the number of Ahoy events that have been created in the given time window and show you the amount and percentage change from the previous time period. The implementation should look like:
+The NewActivityComponent component displays the number of Ahoy events that have been created in the parameter time window. It also displays the amount and percentage change from the previous time period.
 
 ```
 <%= render Matey::NewActivityComponent.new(events: Ahoy::Event.all, time_window: 1.month) %>
 ```
 
-Here we are passing in all of our **Ahoy::Event** model data for the component to count all Ahoy Event, but we can filter this data to only include a specific subset of Ahoy Events or from a specific time period. The component will find the Ahoy events created in the past month and show us the increase/decrease since the last period.
-### Top Visited Landing Pages Component
+Here we are passing in all of our **Ahoy::Event** model data for the component to count all Ahoy Event, but we can filter this data to only include a specific subset of Ahoy Events or from a specific time period. The component finds the Ahoy events created in the past month and show us the increase/decrease since the last period.
+
+### TopVisitedLandingPagesComponent
 
 ![Top Visited Landing Pages Component](./images/topVisitedPages.png)
 
-The Top Visited Pages Table Component component will take advantage of **`Ahoy::Visit`** and gives you a list of the top visited paths. Just pass in the Ahoy::Visit.all and the component will calculate the top landing pages based on the visits that have been created in the given time window. The *`limit`* parameter limits the number of results and is 10 by default. The implementation should look like:
+The TopVisitedPagesTableComponent component uses **`Ahoy::Visit`** data and displays a list of the top visited paths. Pass in `Ahoy::Visit.all` and the component displays the top landing pages based on the visits that have been created in the parameter time window. The *`limit`* parameter limits the number of results and is `10` by default. 
 
 ```
 <%= render(Matey::TopVisitedPagesTableComponent.new(events: Ahoy::Visit.all, time_window: 1.month, limit: 10)) %>
 ```
 
-### Top Events Component
+### TopEventsComponent
 
 ![Top Events Component](./images/topEventsComponent.png)
 
-The Top Events Component component will give you a list of the top Ahoy::Event's that are triggered by your users. Just pass in the Ahoy::Event.all and the component will calculate the top events that have been triggered in the given time window. The *`limit`* parameter limits the number of results and is 10 by default. The implementation should look like:
+The TopEventsComponent displays a list of the top Ahoy::Events. Pass in the `Ahoy::Event.all` and the component calculates the top events that have been triggered in the given time window. The *`limit`* parameter limits the number of results and is `10` by default.
 
 ```
 <%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.month, limit: 10)) %>
 ```
 
-### Custom Card Component
+### CustomCardComponent
 *Coming Soon...*
-### Custom Table Component
+
+### CustomTableComponent
 *Coming Soon...*
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
@@ -128,7 +143,7 @@ sample application:
 
 ## Testing
 
-Use the folloiwng steps to run the test cases:
+Use the following steps to run the test cases:
 
 1. rails db:test:prepare
 2. bundle exec rake
@@ -158,3 +173,5 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the Matey project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/harled/matey/blob/master/CODE_OF_CONDUCT.md).
+
+Project Lead: Caitlin Henry ([**caitmich**](https://github.com/caitmich) | caitlin@harled.ca)

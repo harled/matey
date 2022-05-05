@@ -33,10 +33,12 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ahoy_matey", "~> 4.0"
 
   spec.add_development_dependency "rspec-rails", "~> 5.0"
-  spec.add_development_dependency "factory_bot", "~> 6.0"
+  spec.add_development_dependency "factory_bot_rails", "~> 6.0"
   spec.add_development_dependency "sprockets-rails", "~> 3.2.2"
   spec.add_development_dependency "sqlite3", "~> 1.0"
   spec.add_development_dependency "debug", "~> 1.0"
+  spec.add_development_dependency "standard", "~> 1.3"
+  spec.add_development_dependency "rake", "~> 13.0"
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
