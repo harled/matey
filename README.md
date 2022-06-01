@@ -6,17 +6,18 @@
 
 📈 User Engagement Tracking Components for [Ahoy](https://github.com/ankane/ahoy) 🏴‍☠️
 
-A suite of user engagment ViewComponents for plug and play use right from your Ahoy data! 
-No need to spend time finding what information you need and how to write the queries to set that up.
+A suite of user engagment *ViewComponents* for plug and play use right from your Ahoy data!
+
+No need to spend time determining what information you need and how to write the queries to compile it.
 Simply install the gem, input the required data and track how your users are responding to your application!
 
-Project Lead: Caitlin Henry  
+Project Lead: __Caitlin Henry__  
 [**caitmich**](https://github.com/caitmich) | (*caitlin@harled.ca*)
 
 This gem assumes that event data is coming from [Ahoy](https://github.com/ankane/ahoy) which is a fantastic library
-for tracking visits and events. Your project must have Ahoy installed and configured in order to benefit from Matey.
+for tracking visits and events. Your project must have Ahoy installed and configured in order to benefit from *Matey*.
 
-This gem assumes that you have [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) loaded in your project. It will work without Bootstrap, however, you will need to provide your own custom styling for the Bootstrap equivalent classes.
+This gem assumes that you have [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) loaded in your project. It will work without Bootstrap, however you will need to provide your own custom styling equivalents for the Bootstrap classes.
 
 ## Installation
 
