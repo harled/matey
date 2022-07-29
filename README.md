@@ -160,7 +160,7 @@ Use the following steps to run the test cases:
 
 ## Contributing
 
-Please take a look at our [Contribution Guidelines](https://github.com/harled/matey/blob/contribution-guidelines/docs/CONTRIBUTING.md).
+Please take a look at our [Contribution Guidelines](https://github.com/harled/matey/blob/main/docs/CONTRIBUTING.md).
 
 
 ## License
