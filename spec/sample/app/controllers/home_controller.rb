@@ -4,5 +4,8 @@ class HomeController < ApplicationController
     if rand(10) > 5
       ahoy.track "My random event", language: "Ruby"
     end
+    if rand(25) > 12.5
+      ahoy.track "Another event", language: "Ruby"
+    end
   end
 end
