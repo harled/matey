@@ -1,7 +1,5 @@
-require "ahoy_matey"
-
 class Matey::LeastVisitedPagesComponent < ApplicationComponent
-  def initialize(event_name:, time_window: 1.week)
-
+  def initialize(events:, limit: 10)
+    @events = events
   end
 end
