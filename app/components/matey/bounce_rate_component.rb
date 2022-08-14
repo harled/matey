@@ -18,6 +18,6 @@ class Matey::BounceRateComponent < ApplicationComponent
     @most_bounced_pages = @single_event_visits_landing_page_count.sort_by { |controller_name_and_action, count| count }.last(limit).reverse
 
     # Get the percentage as #-One-Page-Visits / Total-#-Of-Visits
-    @percentage_of_visits_that_were_bounced = (@total_number_of_single_event_visits.to_f / @total_number_of_user_visits == 0 ? 1 : @total_number_of_user_visits )
+    @percentage_of_visits_that_were_bounced = ((@total_number_of_single_event_visits.to_f / (@total_number_of_user_visits == 0 ? 1 : @total_number_of_user_visits)) * 100).truncate(1)
   end 
 end
