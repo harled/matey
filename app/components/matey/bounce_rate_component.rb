@@ -19,5 +19,5 @@ class Matey::BounceRateComponent < ApplicationComponent
 
     # Get the percentage as #-One-Page-Visits / Total-#-Of-Visits
     @percentage_of_visits_that_were_bounced = ((@total_number_of_single_event_visits.to_f / (@total_number_of_user_visits == 0 ? 1 : @total_number_of_user_visits)) * 100).truncate(1)
-  end 
+  end
 end
