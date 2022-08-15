@@ -65,7 +65,7 @@ The following components are available;
 * [NewActivityComponent](#newactivitycomponent)
 * [TopVisitedLandingPagesComponent](#topvisitedlandingpagescomponent)
 * [TopEventsComponent](#topeventscomponent)
-* [BounceRateComponent][#bounceratecomponent]
+* [BounceRateComponent](#bounceratecomponent)
 * [CustomCardComponent](#customcardcomponent)
 * [CustomTableComponent](#customtablecomponent)
 
