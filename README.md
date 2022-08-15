@@ -65,6 +65,7 @@ The following components are available;
 * [NewActivityComponent](#newactivitycomponent)
 * [TopVisitedLandingPagesComponent](#topvisitedlandingpagescomponent)
 * [TopEventsComponent](#topeventscomponent)
+* [BounceRateComponent][#bounceratecomponent]
 * [CustomCardComponent](#customcardcomponent)
 * [CustomTableComponent](#customtablecomponent)
 
@@ -122,6 +123,15 @@ The TopEventsComponent displays a list of the top Ahoy::Events. Pass in the `Aho
 
 ``` ruby
 <%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.month, limit: 10)) %>
+```
+
+### BounceRateComponent
+![Bounce Rate Component](./images/bounceRateComponent.png)
+
+The BounceRateComponent displays the total bounce rate percentage of your application. That is the number of visits to your application in which the user visited **only** one page and left the site, compared to the total number of visits to your application. It additionally shows a list of the pages with the highest bounces. Pass in the `Ahoy::Event.all` & `Ahoy::Visit.all` parameters and the component calculates the bounce rate of your application and the top 5 pages with the highest bounces. The *`limit`* parameter limits the number of results and is `5` by default.
+
+``` ruby
+<%= render(Matey::BounceRateComponent.new(events: Ahoy::Event.all, visits: Ahoy::Visit.all, limit: 5)) %>
 ```
 
 ### CustomCardComponent
