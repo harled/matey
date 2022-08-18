@@ -1,0 +1,29 @@
+<div class="card bg-primary text-light">
+  <div class="card-body">
+    <h5>User Activity for user <%=@user_id%> </h5>
+    <div>
+      <h5><%= @events_for_user.count %> events for this user</h5>
+
+      <table class="table table-hover table-borderless table-sm">
+        <thead class="table-dark">
+          <tr>
+            <th>Event</th>
+            <th>Count</th>
+          </tr>
+        </thead>
+        <tbody class="text-light">
+          <% @count_by_event.each do |event, count| %>
+            <tr>
+              <td><%= event %></td>
+              <td class="text-end"><%= count %></td>
+            </tr>
+          <% end %>
+          <tr class="table-dark">
+            <td><strong>Total:</strong></td>
+            <td class="text-end"><%=  @count_by_event.sum {|event, count| count} %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div><!-- .card-body -->
+</div><!-- .card -->
