@@ -1,14 +1,15 @@
-require_relative "boot"
+# frozen_string_literal: true
 
-require "rails/all"
+require_relative 'boot'
+
+require 'rails/all'
 # require "active_model/railtie"
 # require "action_controller/railtie"
 # require "action_mailer/railtie"
 # require "action_view/railtie"
-require "sprockets/railtie"
+require 'sprockets/railtie'
 
-require "view_component"
-
+require 'view_component'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -26,8 +27,8 @@ module Sample
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    config.action_controller.asset_host = "http://assets.example.com"
+    config.action_controller.asset_host = 'http://assets.example.com'
   end
 end
 
-Sample::Application.config.secret_key_base = "foo"
+Sample::Application.config.secret_key_base = 'foo'
