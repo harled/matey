@@ -16,6 +16,9 @@
   <div class="col-4 d-flex align-items-stretch">
     <%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.month, limit: 3 )) %>
   </div>
+   <div class="col-3 d-flex align-items-stretch mt-3">
+    <%= render(Matey::BounceRateComponent.new(events: Ahoy::Event.all, visits: Ahoy::Visit.all, limit: 5)) %>
+  </div>
   <div class="col-4 d-flex align-items-stretch">
     <%= render(Matey::LeastVisitedPagesComponent.new(events: Ahoy::Event.all)) %>
   </div>
