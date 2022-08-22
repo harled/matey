@@ -1,28 +1,28 @@
 <div class="row mt-4">
-  <div class="col-2 d-flex align-items-stretch">
+  <div class="col d-flex align-items-stretch">
     <%= render(Matey::ActiveUsersComponent.new(events: Ahoy::Event.all)) %>
   </div>
-  <div class="col-2 d-flex align-items-stretch">
+  <div class="col d-flex align-items-stretch">
     <%= render(Matey::NewActivityComponent.new(events: Ahoy::Event.all, time_window: 1.month)) %>
   </div>
-  <div class="col-3 d-flex align-items-stretch">
+  <div class="col d-flex align-items-stretch">
     <%= render(Matey::TopVisitedPagesTableComponent.new(events: Ahoy::Visit.all, time_window: 1.month, limit: 3)) %>
   </div>
-  <div class="col-3 d-flex align-items-stretch">
+  <div class="col d-flex align-items-stretch">
     <%= render(Matey::NewUsersComponent.new(users: User.all, time_window: 2.months )) %>
   </div>
 </div>
 <div class="row mt-4">
-  <div class="col-4 d-flex align-items-stretch">
+  <div class="col d-flex align-items-stretch">
     <%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.month, limit: 3 )) %>
   </div>
-  <div class="col-3 d-flex align-items-stretch mt-3">
+  <div class="col d-flex align-items-stretch mt-3">
     <%= render(Matey::BounceRateComponent.new(events: Ahoy::Event.all, visits: Ahoy::Visit.all, limit: 5)) %>
   </div>
   <div class="col d-flex align-items-stretch mt-3">
     <%= render(Matey::UserEngagementComponent.new(events: Ahoy::Event.all, user_id: 1)) %>
   </div>
-  <div class="col-4 d-flex align-items-stretch my-3">
+  <div class="col d-flex align-items-stretch my-3">
     <%= render(Matey::LeastVisitedPagesComponent.new(events: Ahoy::Event.all, filter_property: "language", filter_value: "Ruby")) %>
   </div>
 </div>
