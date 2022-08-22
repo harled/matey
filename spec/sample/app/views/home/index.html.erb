@@ -20,6 +20,6 @@
     <%= render(Matey::BounceRateComponent.new(events: Ahoy::Event.all, visits: Ahoy::Visit.all, limit: 5)) %>
   </div>
   <div class="col-4 d-flex align-items-stretch">
-    <%= render(Matey::LeastVisitedPagesComponent.new(events: Ahoy::Event.all)) %>
+    <%= render(Matey::LeastVisitedPagesComponent.new(events: Ahoy::Event.all, filter_property: "language", filter_value: "Ruby")) %>
   </div>
 </div>
