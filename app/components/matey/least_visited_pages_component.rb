@@ -1,5 +1,4 @@
 class Matey::LeastVisitedPagesComponent < ApplicationComponent
-
   def initialize(events:, filter_property: nil, filter_value: nil, time_window: 1.year, limit: 10)
     @verified_props = verify_props(filter_property, filter_value, events)
     @filter_value = filter_value if filter_value
@@ -15,14 +14,14 @@ class Matey::LeastVisitedPagesComponent < ApplicationComponent
   end
 
   def verify_props(prop, val, events)
-      hash = {}
-      props = events.group(:properties).count
+    hash = {}
+    props = events.group(:properties).count
 
-      props.keys.each do |key|
-        key.each do |each_key|
-          hash[each_key] = 1
-        end
+    props.keys.each do |key|
+      key.each do |each_key|
+        hash[each_key] = 1
       end
-      hash.key? [prop, val]
     end
+    hash.key? [prop, val]
+  end
 end
