@@ -4,23 +4,24 @@
 ![GitHub issues](https://img.shields.io/github/issues-raw/harled/matey) 
 ![GitHub Repo stars](https://img.shields.io/github/stars/harled/matey?logoColor=purple&style=social)
 
-📈 User Engagement Tracking Components for your Ahoy data 🏴‍☠️
+📈 User Engagement Tracking ViewComponents for [Ahoy](https://github.com/ankane/ahoy) data 🏴‍☠️
 
-This gem provides a suite of *ViewComponents* to observe user engagement in your Ahoy-powered Ruby on Rails application.
+This gem provides a suite of prebuilt [ViewComponents](https://github.com/github/view_component) to observe user engagement in an Ahoy-powered Ruby on Rails application.
 
-In order to use this gem you must:
-* Have [Ahoy](https://github.com/ankane/ahoy) installed, configured and actively tracking user visit and event data
-* Have [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) available for styling
 
 ## Installation
 
-Add this line to your application's Gemfile:
+`matey` depends on:
+* [Ahoy](https://github.com/ankane/ahoy) installed, configured and  tracking user visit and event data
+* [Bootstrap 5.1](https://getbootstrap.com/docs/5.1/getting-started/introduction/) available for styling
+
+Add this line to the Gemfile:
 
 ```ruby
 # latest from rubygems
 gem 'matey'
 
-# latest from github
+# or latest from github
 gem 'matey', github: 'harled/matey', branch: 'main'
 ```
 
@@ -28,145 +29,70 @@ And then execute:
 
     $ bundle install
 
-You now have the latest version of *Matey*. Checkout the [Usage](#usage) section to see what components this gem includes and how to use them in your application.
-
 ## Usage
 
-This section outlines the components Matey offers and how to use them 🛠️
+Once `matey` is installed, the next step is to render a component. The data required varies by component. 
+Below is an example of how the `Matey::ActiveUsersComponent` would be 
+called in an application. This component reports on the number of active users within the past two weeks.
 
-### Basics
-
-Below are some common flows that will help you recognize how the named parameters work for *Matey*'s components. 
-
-All of the Matey components follow the same pattern. The following is an example of calling the `ActiveUsersComponent` to report on the last week of data based on all Ahoy events.
-
-This is what rendering a *Matey* view component would look like in your view file:
-
+Below the component is called with two named parameters which include `events` (ahoy event data) and 
+the `time_window`, which is the period to report on.
 
 ```ruby
 # dashboard.html.erb
 <%= render Matey::ActiveUsersComponent.new(events: Ahoy::Event.all, time_window: 1.week) %>
 ```
 
-All components begin with **`Matey::`** followed by the name of the component. The **`data`** parameter varies but will always expect the parameter to be an ***ActiveRecordRelation*** collection. 
+It is that simple! There should now be a card displaying the number of active users within the past week.
 
-The **`time_window`** parameter is the time range that you want your data filtered based on. This is an optional parameter. The default is a `1.week` time window.
+View the list of available components [here](COMPONENTS.md).
 
-**Note**: The more data you have, the more interesting the components will be. A common and helpful pattern is to capture events on all controller actions. Details on doing this can be found [here](https://github.com/ankane/ahoy#ruby).
-
-If you have a lot of visit/event data, you can always control the load time of components by reducing the `time_window` parameter (i.e. using a range of a year could be a lot of data!).
-
-## Components
-
-The following components are available;
-
-* [NewUsersComponent](#newuserscomponent)
-* [ActiveUsersComponent](#activeuserscomponent)
-* [NewActivityComponent](#newactivitycomponent)
-* [TopVisitedLandingPagesComponent](#topvisitedlandingpagescomponent)
-* [TopEventsComponent](#topeventscomponent)
-* [BounceRateComponent](#bounceratecomponent)
-* [CustomCardComponent](#customcardcomponent)
-* [CustomTableComponent](#customtablecomponent)
-
-### NewUsersComponent
-
-![New Users Component](./images/newUsersComponent.png)
-
-The NewUsersComponent displays the number of new users that have been created within the time window parameter. It also displays the number and percentage change from the previous time period. 
-
-``` ruby
-<%= render Matey::NewUsersComponent.new(users: User.all, time_window: 2.month) %>
-```
-
-Here we are passing in all of our **User** model data for the component to find the new users that were made in the last 2 months, but we can filter this data to only include a specific subset of users and/or a specific time period. The component finds new users created in the past month and shows us the increase/decrease since the last period based on the `created_at` attribute.
-
-### ActiveUsersComponent
-
-![ActiveUsersComponent](./images/activeUsersComponent.png)
-
-The ActiveUsersComponent displays the number of active users that have been created within the time window parameter.  It also displays the number and percentage change from the previous time period. This component counts active users as those who have been involved in an Ahoy event in the given time window.
-
-``` ruby
-<%= render Matey::ActiveUsersComponent.new(events: Ahoy::Event.all, time_window: 1.month) %>
-```
-
-Here we are passing in all of our **Ahoy::Event** model data which is used to determine what users triggered an event in the parameter time period. The component finds the active users created in the past month and shows us the increase/decrease since the last period.
-
-### NewActivityComponent
-
-![New Activity Component](./images/newActivityComponent.png)
-
-The NewActivityComponent component displays the number of Ahoy events that have been created within the time window parameter. It also displays the number and percentage change from the previous time period.
-
-``` ruby
-<%= render (Matey::NewActivityComponent.new(events: Ahoy::Event.all, time_window: 1.month)) %>
-```
-
-Here we are passing in all of our **Ahoy::Event** model data for the component to count all Ahoy Events, but we can filter this data to only include a specific subset of Ahoy Events or from a specific time period. The component finds the Ahoy events created in the past month and shows us the increase/decrease since the last period.
-
-### TopVisitedLandingPagesComponent
-
-![Top Visited Landing Pages Component](./images/topVisitedPages.png)
-
-The TopVisitedPagesTableComponent component uses **`Ahoy::Visit`** data and displays a list of the top visited paths. Pass in `Ahoy::Visit.all` and the component displays the top landing pages based on the visits that have been created within the time window parameter. The *`limit`* parameter limits the number of results and is `10` by default. 
-
-``` ruby
-<%= render Matey::TopVisitedPagesTableComponent.new(events: Ahoy::Visit.all, time_window: 1.month, limit: 10) %>
-```
-
-### TopEventsComponent
-
-![Top Events Component](./images/topEventsComponent.png)
-
-The TopEventsComponent displays a list of the top Ahoy::Events. Pass in the `Ahoy::Event.all` and the component calculates the top events that have been triggered in the given time window. The *`limit`* parameter limits the number of results and is `10` by default.
-
-``` ruby
-<%= render(Matey::TopEventsComponent.new(events: Ahoy::Event.all, time_window: 1.month, limit: 10)) %>
-```
-
-### BounceRateComponent
-![Bounce Rate Component](./images/bounceRateComponent.png)
-
-The BounceRateComponent displays the total bounce rate percentage of your application. That is the number of visits to your application in which the user visited **only** one page and left the site, compared to the total number of visits to your application. It additionally shows a list of the pages with the highest bounces. Pass in the `Ahoy::Event.all` & `Ahoy::Visit.all` parameters and the component calculates the bounce rate of your application and the top 5 pages with the highest bounces. The *`limit`* parameter limits the number of results and is `5` by default.
-
-``` ruby
-<%= render(Matey::BounceRateComponent.new(events: Ahoy::Event.all, visits: Ahoy::Visit.all, limit: 5)) %>
-```
-
-### CustomCardComponent
-*`Coming Soon...`*
-
-### CustomTableComponent
-*`Coming Soon...`*
+**Note**: The more data, the more interesting the components will be. A common and helpful pattern is to capture events on all controller actions. Details on doing this can be found [here](https://github.com/ankane/ahoy#ruby).
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+After checking our the repository, run the following commands to get started:
 
-To install this gem onto your local machine, run `bundle exec rake install`.
+```bash
+# install required packages
+bin/setup  
 
-A sample application is included in this repository to help with exploring the components and testing. To use the 
-sample application: 
+# run test cases and ensure everything is passing
+rake spec  
+
+# an interactive prompt that will allow you to experiment with matey (currently broken!)
+bin/console
+```
+
+To install `matey` and make it available as a regular rubygem, run the following command: `bundle exec rake install`
+
+### Sample Application
+
+ViewComponents are pretty hard to test without a Ruby on Rails application. This repository includes a sample application that makes it easy to see how a component renders and make quick adjustments.
+
+To use the sample application: 
 
 1. `cd spec/sample`
 2. `bundle`
 3. `rails s`
 4. Open a browser to `localhost:3000`
 
-
-<br>
-
-#### Releasing a New Version
-To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-
 ## Testing
 
-Use the following steps to run the test cases:
+To run the test cases:
 
 1. `rails db:test:prepare`
 2. `bundle exec rake`
+
+## Releasing a New Version
+
+To release a new version:
+
+1. Update the version number in `version.rb`
+2. Run `bundle exec rake release`
+
+The rake task will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
 
 ## Contributing
 
@@ -180,5 +106,3 @@ The gem is available as open source under the terms of the [MIT License](https:/
 ## Code of Conduct
 
 Everyone interacting in the *Matey* project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/harled/matey/blob/master/CODE_OF_CONDUCT.md).
-
-Project Lead: __Caitlin Henry__ <br>([**caitmich**](https://github.com/caitmich) | caitlin@harled.ca)
