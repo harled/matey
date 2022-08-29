@@ -3,11 +3,16 @@ require_relative "lib/matey/version"
 Gem::Specification.new do |spec|
   spec.name = "matey"
   spec.version = Matey::VERSION
-  spec.authors = ["Suvasan Krishnasamy", "Jon Loos", "Caitlin Henry", "Chris Young"]
-  spec.email = ["suvasan@harled.ca", "jon@harled.ca", "caitlin@harled.ca", "chris@harled.ca"]
+
+  # Former authors include:
+  # Suvasan Krishnasamy / suvasan@harled.ca
+  # Caitlin Henry / caitlin@harled.ca
+
+  spec.authors = ["Jon Loos", "Chris Young"]
+  spec.email = ["jon@harled.ca", "chris@harled.ca"]
 
   spec.summary = "Track user engagement using Ahoy and ViewComponents."
-  spec.description = "ViewComponents that helpful in viewing user engagement metrics from Ahoy."
+  spec.description = "ViewComponents that are helpful in viewing user engagement metrics from Ahoy."
   spec.homepage = "https://github.com/harled/matey"
   spec.license = "MIT"
   spec.required_ruby_version = ">= 2.6.0"
@@ -31,7 +36,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "view_component", "~> 2.0"
   spec.add_dependency "ahoy_matey", "~> 4.0"
-
+  
   spec.add_development_dependency "rspec-rails", "~> 5.0"
   spec.add_development_dependency "factory_bot_rails", "~> 6.0"
   spec.add_development_dependency "sprockets-rails", "~> 3.2.2"
