@@ -21,6 +21,6 @@
     <%= render(Matey::UserEngagementComponent.new(events: Ahoy::Event.all, user_id: 1)) %>
   </div>
   <div class="col d-flex align-items-stretch mt-3">
-    <%= render(Matey::DayOfWeekComponent.new(visits: Ahoy::Visit.all, exclude_days: ["Monday", "Tuesday"])) %>
+    <%= render(Matey::VisitsByDayOfWeekComponent.new(visits: Ahoy::Visit.all, exclude_days: ["Monday", "Tuesday"])) %>
   </div>
 </div>
