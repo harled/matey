@@ -8,10 +8,10 @@ class Matey::BrowserOsBreakdownComponent < ApplicationComponent
         @browsers = visitsInTimeWindow.group(:browser).count
         @oss = visitsInTimeWindow.group(:os).count
 
-        #would be very cool if we could somehow group by mac/windows/linux and then split into browsers (or the inverse)
+        #TODO would be very cool if we could somehow group by mac/windows/linux and then split into browsers (or the inverse)
 
-        @safari = visits.where(browser: "Safari").take #take only returns one
-        @chromes = visits.where(browser: "Chrome").all
+        # @safari = visits.where(browser: "Safari").take #take only returns one
+        # @chromes = visits.where(browser: "Chrome").all
         @time_window = time_window
     end
 end
