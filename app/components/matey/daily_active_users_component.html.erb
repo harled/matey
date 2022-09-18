@@ -1,0 +1,12 @@
+<div class="card bg-primary text-light">
+  <div class="card-body">
+    <div class="col">
+      <div class="col">
+        <h5>Daily Active Users</h5>
+      </div>
+      <div class="col-auto">
+        <p>Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago</p>
+      </div>
+    </div>
+  </div>
+</div>
