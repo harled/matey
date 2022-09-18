@@ -6,6 +6,7 @@
       </div>
       <div class="col-auto">
         <p>Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago</p>
+        <p><%= @distinct_user_visits_by_day %></p>
       </div>
     </div>
   </div>
