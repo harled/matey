@@ -7,32 +7,32 @@
       <div class="col-auto">
         <p>Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago</p>
         <table class='table table-hover table-borderless'>
-            <thead class='table-dark'>
-                <th>Browser</th>
-                <th class='text-center'>Visitor Count</th>
-            </thead>
-            <tbody>
-                <% @browsers.each do |key, value| %>
-                    <tr>
-                        <td><%= key %></td>
-                        <td class='text-center'><%= value %></td>
-                    </tr>
-                <% end %>
-            </tbody>
+          <thead class='table-dark'>
+            <th>Browser</th>
+            <th class='text-center'>Visitor Count</th>
+          </thead>
+          <tbody>
+            <% @browsers.each do |key, value| %>
+              <tr>
+                <td><%= key %></td>
+                <td class='text-center'><%= value %></td>
+              </tr>
+            <% end %>
+          </tbody>
         </table>
         <table class='table table-hover table-borderless'>
-            <thead class='table-dark'>
-                <th>OS</th>
-                <th class='text-center'>Visitor Count</th>
-            </thead>
-            <tbody>
-                <% @oss.each do |key, value| %>
-                    <tr>
-                        <td><%= key %></td>
-                        <td class='text-center'><%= value %></td>
-                    </tr>
-                <% end %>
-            </tbody>
+          <thead class='table-dark'>
+            <th>OS</th>
+            <th class='text-center'>Visitor Count</th>
+          </thead>
+          <tbody>
+            <% @oss.each do |key, value| %>
+              <tr>
+                <td><%= key %></td>
+                <td class='text-center'><%= value %></td>
+              </tr>
+            <% end %>
+          </tbody>
         </table>
       </div>
     </div>
