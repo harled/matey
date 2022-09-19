@@ -14,9 +14,9 @@
           </tr>
         </thead>
         <tbody class="text-light">
-          <% @visitsByDayOfWeek.each do |dayOfWeek, count| %>
+          <% @visits_by_day_of_week.each do |day_of_week, count| %>
             <tr>
-              <td><%= dayOfWeek %></td>
+              <td><%= day_of_week %></td>
               <td class="text-end"><%= count %></td>
             </tr>
           <% end %>
