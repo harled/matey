@@ -9,7 +9,7 @@
             <th>Browser</th>
             <th class='text-center'>Visitor Count</th>
           </thead>
-          <tbody>
+          <tbody class='text-light'>
             <% @browsers.each do |browser_name, visitor_count| %>
               <tr>
                 <td><%= browser_name %></td>
@@ -23,7 +23,7 @@
             <th>OS</th>
             <th class='text-center'>Visitor Count</th>
           </thead>
-          <tbody>
+          <tbody class='text-light'>
             <% @operating_systems.each do |operating_system, visitor_count| %>
               <tr>
                 <td><%= operating_system %></td>
