@@ -10,10 +10,10 @@
             <th class='text-center'>Visitor Count</th>
           </thead>
           <tbody>
-            <% @browsers.each do |key, value| %>
+            <% @browsers.each do |browser_name, visitor_count| %>
               <tr>
-                <td><%= key %></td>
-                <td class='text-center'><%= value %></td>
+                <td><%= browser_name %></td>
+                <td class='text-center'><%= visitor_count %></td>
               </tr>
             <% end %>
           </tbody>
@@ -24,10 +24,10 @@
             <th class='text-center'>Visitor Count</th>
           </thead>
           <tbody>
-            <% @oss.each do |key, value| %>
+            <% @operating_systems.each do |operating_system, visitor_count| %>
               <tr>
-                <td><%= key %></td>
-                <td class='text-center'><%= value %></td>
+                <td><%= operating_system %></td>
+                <td class='text-center'><%= visitor_count %></td>
               </tr>
             <% end %>
           </tbody>
