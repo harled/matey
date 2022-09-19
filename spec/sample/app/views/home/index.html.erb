@@ -17,10 +17,10 @@
   <div class="col-3 d-flex align-items-stretch mt-3">
     <%= render(Matey::BounceRateComponent.new(events: Ahoy::Event.all, visits: Ahoy::Visit.all, limit: 5)) %>
   </div>
-  <div class="col d-flex align-items-stretch mt-3">
-    <%= render(Matey::UserEngagementComponent.new(events: Ahoy::Event.all, user_id: 1)) %>
+  <div class="col-3 d-flex align-items-stretch mt-3">
+    <%= render(Matey::BrowserOsBreakdownComponent.new(visits: Ahoy::Visit.all, time_window: 1.month)) %>
   </div>
   <div class="col d-flex align-items-stretch mt-3">
-    <%= render(Matey::BrowserOsBreakdownComponent.new(visits: Ahoy::Visit.all, time_window: 1.month)) %>
+    <%= render(Matey::UserEngagementComponent.new(events: Ahoy::Event.all, user_id: 1)) %>
   </div>
 </div>
