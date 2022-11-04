@@ -51,7 +51,7 @@ View the list of available components [here](COMPONENTS.md).
 
 ## Development
 
-After checking our the repository, run the following commands to get started:
+After checking out the repository, run the following commands to get started:
 
 ```bash
 # install required packages
