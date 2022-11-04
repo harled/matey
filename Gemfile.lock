@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    matey (0.1.2)
+    matey (0.1.3)
       ahoy_matey (~> 4.0)
       view_component (~> 2.74.1)
 
