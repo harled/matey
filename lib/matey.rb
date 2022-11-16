@@ -11,6 +11,7 @@ require_relative "../app/components/matey/top_events_component"
 require_relative "../app/components/matey/top_visited_pages_table_component"
 require_relative "../app/components/matey/user_engagement_component"
 require_relative "../app/components/matey/visits_by_day_of_week_component"
+require_relative "../app/components/matey/browser_os_breakdown_component"
 
 module Matey
   class Error < StandardError; end
