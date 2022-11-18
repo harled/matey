@@ -1,0 +1,26 @@
+<div class="card bg-primary text-light">
+    <div class="card-header">
+      <h5>Visits By Day of Week since <%= time_ago_in_words(@time_window.ago).titleize %> Ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>) </h5>
+      <% if @exclude_days %>
+        <p>Excluding <%= @exclude_days%>
+      <% end %>
+    </div>
+    <div class="card-body">
+      <table class="table table-hover table-borderless table-sm">
+        <thead class="table-dark">
+          <tr>
+            <th class="text-start">DayOfWeek</th>
+            <th class="text-end">Count</th>
+          </tr>
+        </thead>
+        <tbody class="text-light">
+          <% @visits_by_day_of_week.each do |day_of_week, count| %>
+            <tr>
+              <td><%= day_of_week %></td>
+              <td class="text-end"><%= count %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div><!-- .card-body -->
+</div><!-- .card -->
