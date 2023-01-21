@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Matey::TopEventsComponent < ApplicationComponent
+class Matey::TopEventsComponent < Matey::ApplicationComponent
   def initialize(events:, time_window: 1.week, limit: 5)
     raise ArgumentError unless events.is_a?(ActiveRecord::Relation)
     raise ArgumentError unless time_window.is_a?(Integer)
