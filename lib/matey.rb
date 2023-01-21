@@ -2,7 +2,7 @@
 
 require_relative "matey/version"
 
-require_relative "../app/components/application_component"
+require_relative "../app/components/matey/application_component"
 require_relative "../app/components/matey/active_users_component"
 require_relative "../app/components/matey/bounce_rate_component"
 require_relative "../app/components/matey/new_activity_component"

@@ -1,4 +1,4 @@
-class Matey::NewActivityComponent < ApplicationComponent
+class Matey::NewActivityComponent < Matey::ApplicationComponent
   def initialize(events:, time_window: 1.week)
     raise ArgumentError unless events.is_a?(ActiveRecord::Relation)
     raise ArgumentError unless time_window.is_a?(Integer)

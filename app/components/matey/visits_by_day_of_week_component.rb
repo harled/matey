@@ -1,6 +1,6 @@
 require "ahoy_matey"
 
-class Matey::VisitsByDayOfWeekComponent < ApplicationComponent
+class Matey::VisitsByDayOfWeekComponent < Matey::ApplicationComponent
   def initialize(visits:, time_window: 1.month, limit: 10, exclude_days: [])
     @time_window = time_window
 
