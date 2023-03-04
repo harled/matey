@@ -13,7 +13,7 @@ RSpec.describe Matey::ActiveUsersComponent, type: :component do
     it "with a card element" do
       subject = render_inline(Matey::ActiveUsersComponent.new(events: Ahoy::Event.all))
 
-      expect(subject.css("div[class='card bg-primary text-light']").to_html).not_to be_empty
+      expect(subject.css("div[class='card bg-light text-dark border-dark']").to_html).not_to be_empty
     end
   end
 

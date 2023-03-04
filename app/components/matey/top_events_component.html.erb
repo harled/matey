@@ -1,6 +1,6 @@
 
 
-<div class="card bg-primary text-light">
+<div class="card bg-light text-dark border-dark">
   <div class="card-body">
     <h5>Top Events Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h5>
     <div>
@@ -11,7 +11,7 @@
             <th>Count</th>
           </tr>
         </thead>
-        <tbody class="text-light">
+        <tbody class="text-dark border-dark">
           <% @events.each do |action, count| %>
             <tr>
               <td><%= action %></td>
