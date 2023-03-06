@@ -45,6 +45,8 @@ the `time_window`, which is the period to report on.
 
 It is that simple! There should now be a card displaying the number of active users within the past week.
 
+View the available component color schemes [here](COLOR_SCHEMES.md).
+
 View the list of available components [here](COMPONENTS.md).
 
 **Note**: The more data, the more interesting the components will be. A common and helpful pattern is to capture events on all controller actions. Details on doing this can be found [here](https://github.com/ankane/ahoy#ruby).

@@ -1,4 +1,4 @@
-<div class="card bg-light text-dark border-dark">
+<div class="card  <%= @color_scheme %>">
     <div class="card-header">
       <h5>Visits By Day of Week since <%= time_ago_in_words(@time_window.ago).titleize %> Ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>) </h5>
       <% if @exclude_days %>
