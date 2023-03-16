@@ -1,7 +1,7 @@
 require "ahoy_matey"
 
 class Matey::BounceRateComponent < Matey::ApplicationComponent
-  def initialize(events:, visits:, limit: 5, color_scheme: 'neutral')
+  def initialize(events:, visits:, limit: 5, color_scheme: "neutral")
     # Determine the total number of user sessions to the website
     @total_number_of_user_visits = events.pluck(:visit_id).uniq.count
 

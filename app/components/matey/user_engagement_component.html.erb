@@ -1,4 +1,4 @@
-<div class="card  <%= @color_scheme %>">
+<div class="card <%= @color_scheme %>">
   <div class="card-body">
     <h5>User Activity for <i>user id: <%=@user_id%></i> since <i><%= time_ago_in_words(@time_window.ago).titleize %></i> ago </h5>
     <div>

@@ -57,10 +57,13 @@ After checking out the repository, run the following commands to get started:
 
 ```bash
 # install required packages
-bin/setup  
+bin/setup
+
+# install spec/sample packages
+bundle install --gemfile spec/sample/Gemfile
 
 # run test cases and ensure everything is passing
-rake spec  
+rake spec
 
 # an interactive prompt that will allow you to experiment with matey (currently broken!)
 bin/console
