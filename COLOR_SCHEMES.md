@@ -10,7 +10,7 @@
 ![Neutral Color Scheme](./images/colorSchemeNeutral.png)
 
 ```ruby
-<%= render Matey::[ComponentType].new(..., color_scheme: 'neutral') %>
+<%= render Matey::[ComponentType].new(..., color_scheme: "neutral") %>
 ```
 
 Note: If `color_scheme` argument is omitted, color scheme value defaults to `neutral`

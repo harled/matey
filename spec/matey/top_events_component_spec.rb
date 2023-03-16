@@ -7,13 +7,14 @@ RSpec.describe Matey::TopEventsComponent, type: :component do
     @users = create_list(:user, 25)
     @ahoy_visits = create_list(:ahoy_visit, 25)
     @ahoy_events = create_list(:ahoy_event, 25)
+    @color_scheme = "bg-light text-dark border-dark"
   end
 
   context "renders component" do
     it "with a card element" do
       subject = render_inline(Matey::TopEventsComponent.new(events: Ahoy::Event.all))
 
-      expect(subject.css("div[class='card  <%= @color_scheme %>']").to_html).not_to be_empty
+      expect(subject.css("div[class='card #{@color_scheme}']").to_html).not_to be_empty
     end
   end
 

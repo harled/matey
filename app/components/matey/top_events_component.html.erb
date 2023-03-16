@@ -1,6 +1,6 @@
 
 
-<div class="card  <%= @color_scheme %>">
+<div class="card <%= @color_scheme %>">
   <div class="card-body">
     <h5>Top Events Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>)</h5>
     <div>
