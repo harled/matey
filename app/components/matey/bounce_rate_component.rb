@@ -1,7 +1,7 @@
 require "ahoy_matey"
 
 class Matey::BounceRateComponent < Matey::ApplicationComponent
-  def initialize(events:, visits:, limit: 5)
+  def initialize(events:, visits:, limit: 5, color_scheme: 'neutral')
     # Determine the total number of user sessions to the website
     @total_number_of_user_visits = events.pluck(:visit_id).uniq.count
 
@@ -18,5 +18,7 @@ class Matey::BounceRateComponent < Matey::ApplicationComponent
 
     # Get the percentage as #-One-Page-Visits / Total-#-Of-Visits
     @percentage_of_visits_that_were_bounced = ((@total_number_of_single_event_visits.to_f / (@total_number_of_user_visits == 0 ? 1 : @total_number_of_user_visits)) * 100).round(1)
+
+    @color_scheme = color_scheme(scheme: color_scheme)
   end
 end

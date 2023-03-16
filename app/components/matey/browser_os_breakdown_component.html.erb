@@ -1,4 +1,4 @@
-<div class="card bg-primary text-light">
+<div class="card  <%= @color_scheme %>">
   <div class="card-body">
     <div class="row">
       <h5 class="text-center">Browser and OS Breakdown</h5>
@@ -9,7 +9,7 @@
             <th>Browser</th>
             <th class='text-center'>Visitor Count</th>
           </thead>
-          <tbody class='text-light'>
+          <tbody class='text-dark border-dark'>
             <% @browsers.each do |browser_name, visitor_count| %>
               <tr>
                 <td><%= browser_name %></td>
@@ -23,7 +23,7 @@
             <th>OS</th>
             <th class='text-center'>Visitor Count</th>
           </thead>
-          <tbody class='text-light'>
+          <tbody class='text-dark border-dark'>
             <% @operating_systems.each do |operating_system, visitor_count| %>
               <tr>
                 <td><%= operating_system %></td>

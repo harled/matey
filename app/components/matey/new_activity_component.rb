@@ -1,5 +1,5 @@
 class Matey::NewActivityComponent < Matey::ApplicationComponent
-  def initialize(events:, time_window: 1.week)
+  def initialize(events:, time_window: 1.week, color_scheme: 'neutral')
     raise ArgumentError unless events.is_a?(ActiveRecord::Relation)
     raise ArgumentError unless time_window.is_a?(Integer)
 
@@ -10,5 +10,7 @@ class Matey::NewActivityComponent < Matey::ApplicationComponent
     @change_active_percent = ((@change_active_number.to_f / (previous_period == 0 ? 1 : previous_period)) * 100).truncate(2)
 
     @time_window = time_window
+
+    @color_scheme = color_scheme(scheme: color_scheme)
   end
 end
