@@ -7,8 +7,8 @@
       <div class="col-auto">
         <p>Since <%= time_ago_in_words(@time_window.ago).titleize %> Ago</p>
         <p><%= @distinct_user_visits_by_day %></p>
-        <p><%= @distinct_user_visits_by_day2 %></p>
-        <%= @visits.each {|e| e} %>
+        <p><%# @distinct_user_visits_by_day2 %></p>
+        <%# @visits.each {|e| e} %>
       </div>
     </div>
   </div>
