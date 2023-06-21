@@ -79,7 +79,7 @@ To use the sample application:
 
 1. `cd spec/sample`
 2. `bundle`
-3. `rails s`
+3. `bundle exec rails s`
 4. Open a browser to `localhost:3000`
 
 ## Testing
