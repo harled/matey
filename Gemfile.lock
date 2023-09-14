@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    matey (0.1.4)
+    matey (0.1.5)
       ahoy_matey (~> 4.0)
       groupdate (~> 6.4.0)
       view_component (~> 2.74)

@@ -1,8 +1,8 @@
 <div class="card <%= @color_scheme %>">
     <div class="card-header">
       <h5>Visits By Day of Week since <%= time_ago_in_words(@time_window.ago).titleize %> Ago (<%= @time_window.ago.strftime("%m/%d/%Y") %>) </h5>
-      <% if @exclude_days %>
-        <p>Excluding <%= @exclude_days%>
+      <% if @exclude_days.any? %>
+        <p>Excluding <%= @exclude_days.join(', ') %></p>
       <% end %>
     </div>
     <div class="card-body">
@@ -14,7 +14,7 @@
           </tr>
         </thead>
         <tbody class="text-dark border-dark">
-          <% @visits_by_day_of_week.each do |day_of_week, count| %>
+          <% visits_by_day_of_week.each do |day_of_week, count| %>
             <tr>
               <td><%= day_of_week %></td>
               <td class="text-end"><%= count %></td>
