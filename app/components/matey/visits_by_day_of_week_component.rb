@@ -1,24 +1,17 @@
 require "ahoy_matey"
+require "groupdate"
 
 class Matey::VisitsByDayOfWeekComponent < Matey::ApplicationComponent
-  def initialize(visits:, time_window: 1.month, limit: 10, exclude_days: [], color_scheme: "neutral")
+  def initialize(visits:, time_window: 1.month, exclude_days: [], color_scheme: "neutral")
+    @visits = visits
     @time_window = time_window
-
-    # query for all the visits
-    all_visits = visits.where(started_at: time_window.ago..)
-
-    visits_by_day_of_week = {}
-
-    # get day of week from each visit. Incrase value of dayOfWeek key by 1 if key is already there else initialize key with value of 1
-    all_visits.each { |visit| visits_by_day_of_week.key?(visit.started_at.strftime("%A")) ? visits_by_day_of_week[(visit.started_at.strftime("%A"))] += 1 : visits_by_day_of_week[visit.started_at.strftime("%A")] = 1 }
-
-    # take out items from visits_by_day_of_week  hashmap based on exclude_days parameter
-    if exclude_days.length > 0
-      exclude_days.each { |exclude| visits_by_day_of_week = visits_by_day_of_week.slice!(exclude) }
-    end
-
-    @visits_by_day_of_week = visits_by_day_of_week
-
+    @exclude_days = exclude_days
     @color_scheme = color_scheme(scheme: color_scheme)
+  end
+
+  # group visits by day in provided time window
+  def visits_by_day_of_week
+    visits_by_day_of_week = @visits.group_by_day_of_week(:started_at, format: "%A", range: @time_window.ago..).count
+    visits_by_day_of_week.except!(*@exclude_days) if @exclude_days.any?
   end
 end
