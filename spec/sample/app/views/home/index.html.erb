@@ -27,6 +27,6 @@
     <%= render(Matey::DailyActiveUsersComponent.new(visits: Ahoy::Visit.all, time_window: 1.month)) %>
   </div>
   <div class="col d-flex align-items-stretch mt-3">
-    <%= render(Matey::VisitsByDayOfWeekComponent.new(visits: Ahoy::Visit.all, exclude_days: ["Monday", "Thursday"])) %>
+    <%= render(Matey::VisitsByDayOfWeekComponent.new(visits: Ahoy::Visit.all, exclude_days: ["Monday", "Tuesday"])) %>
   </div>
 </div>
