@@ -6,7 +6,7 @@ class Matey::VisitsByDayOfWeekComponent < Matey::ApplicationComponent
 
     visits_by_day_of_week = visits
       .where(started_at: time_window.ago..)
-      .group("to_char(started_at, 'Day')")
+      .group("strftime('%w', started_at)")
       .count
 
     # Remove days to be excluded
