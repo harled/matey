@@ -9,4 +9,9 @@ class Matey::ApplicationComponent < ViewComponent::Base
   def before_render
     validate!
   end
+
+  def validate_arguments(records, time_window)
+    raise ArgumentError unless records.is_a?(ActiveRecord::Relation)
+    raise ArgumentError unless time_window.is_a?(Integer)
+  end
 end

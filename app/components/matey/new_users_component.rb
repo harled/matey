@@ -1,5 +1,7 @@
 class Matey::NewUsersComponent < Matey::ApplicationComponent
   def initialize(users:, time_window: 1.week, color_scheme: "neutral")
+    validate_arguments(users, time_window)
+
     @current_period = users.where(created_at: time_window.ago..Time.current).count
     previous_period = users.where(created_at: (2 * time_window).ago..time_window.ago).count
 
