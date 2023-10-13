@@ -1,6 +1,6 @@
 class Matey::DailyActiveUsersComponent < Matey::ApplicationComponent
   def initialize(visits:, time_window:, color_scheme: "neutral")
-    validate_arguments(visits, time_window)
+    validate_arguments(records: visits, time_window: time_window)
 
     @visits = visits
     @time_window = time_window

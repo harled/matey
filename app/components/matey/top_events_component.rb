@@ -2,7 +2,7 @@
 
 class Matey::TopEventsComponent < Matey::ApplicationComponent
   def initialize(events:, time_window: 1.week, limit: 5, color_scheme: "neutral")
-    validate_arguments(events, time_window)
+    validate_arguments(records: events, time_window: time_window)
 
     @events = events.where(time: time_window.ago..Time.current).limit(limit).order("count(name) DESC").group(:name).count
     @time_window = time_window
