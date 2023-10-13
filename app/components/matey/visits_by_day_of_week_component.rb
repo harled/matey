@@ -3,7 +3,7 @@ require "groupdate"
 
 class Matey::VisitsByDayOfWeekComponent < Matey::ApplicationComponent
   def initialize(visits:, time_window: 1.month, exclude_days: [], color_scheme: "neutral")
-    validate_arguments(records: visits, time_window: time_window)
+    super(records: visits, time_window: time_window)
 
     @visits = visits
     @time_window = time_window

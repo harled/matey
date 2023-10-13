@@ -1,6 +1,6 @@
 class Matey::TopVisitedPagesTableComponent < Matey::ApplicationComponent
   def initialize(events:, time_window: 1.week, limit: 10, color_scheme: "neutral")
-    validate_arguments(records: events, time_window: time_window)
+    super(records: events, time_window: time_window)
 
     # Group events by controller (:name) and action. Aggregate number of unique user actions
     @user_count_by_event = events.where(started_at: time_window.ago..).pluck(:landing_page).tally
