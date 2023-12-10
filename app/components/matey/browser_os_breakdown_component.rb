@@ -1,5 +1,7 @@
 class Matey::BrowserOsBreakdownComponent < Matey::ApplicationComponent
   def initialize(visits:, time_window:, color_scheme: "neutral")
+    super(records: visits, time_window: time_window)
+
     visits_in_time_window = visits.where(started_at: time_window.ago..)
     @visits_in_time_window = visits_in_time_window.count
     @browsers = visits_in_time_window.group(:browser).count
