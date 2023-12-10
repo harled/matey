@@ -65,7 +65,7 @@ bundle install --gemfile spec/sample/Gemfile
 # run test cases and ensure everything is passing
 rake spec
 
-# an interactive prompt that will allow you to experiment with matey (currently broken!)
+# an interactive prompt that will allow you to experiment with matey
 bin/console
 ```
 
