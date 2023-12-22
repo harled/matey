@@ -35,7 +35,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ["lib"]
 
   spec.add_dependency "view_component", "~> 2.74"
-  spec.add_dependency "ahoy_matey", "~> 4.0"
+  spec.add_dependency "ahoy_matey", ">= 4.0"
   spec.add_dependency "groupdate", "~> 6.4.0"
   spec.add_dependency "chartkick", "~>5.0.4"
 
