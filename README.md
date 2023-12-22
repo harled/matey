@@ -49,6 +49,8 @@ View the available component color schemes [here](COLOR_SCHEMES.md).
 
 View the list of available components [here](COMPONENTS.md).
 
+> Note: Some components leverage Chartkick for presenting charts. Refer to [Chartkick documentation](https://chartkick.com/#importmap) to include it in your project.
+
 **Note**: The more data, the more interesting the components will be. A common and helpful pattern is to capture events on all controller actions. Details on doing this can be found [here](https://github.com/ankane/ahoy#ruby).
 
 ## Development
