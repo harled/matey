@@ -34,7 +34,7 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "view_component", "~> 2.74"
+  spec.add_dependency "view_component", "~> 3.9.0"
   spec.add_dependency "ahoy_matey", ">= 4.0"
   spec.add_dependency "groupdate", "~> 6.4.0"
 
