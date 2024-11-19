@@ -1,5 +1,7 @@
 class Matey::DailyActiveUsersComponent < Matey::ApplicationComponent
   def initialize(visits:, time_window:, color_scheme: "neutral")
+    super(records: visits, time_window: time_window)
+
     @visits = visits
     @time_window = time_window
     visits_in_time_window = visits.where(started_at: time_window.ago..)
