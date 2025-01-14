@@ -1,7 +1,6 @@
 class Matey::NewActivityComponent < Matey::ApplicationComponent
   def initialize(events:, time_window: 1.week, color_scheme: "neutral")
-    raise ArgumentError unless events.is_a?(ActiveRecord::Relation)
-    raise ArgumentError unless time_window.is_a?(Integer)
+    super(records: events, time_window: time_window)
 
     @current_period = events.where(time: time_window.ago..Time.current).count
     previous_period = events.where(time: (2 * time_window).ago..time_window.ago).pluck(:user_id).count
