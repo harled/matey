@@ -3,7 +3,7 @@
 {
 	"name": "matey",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-	"image": "mcr.microsoft.com/devcontainers/ruby:1-3.3-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/ruby:3.3-bookworm",
 	"features": {
 		"ghcr.io/devcontainers/features/node:1": {}
 	},
