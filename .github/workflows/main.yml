@@ -15,7 +15,7 @@ jobs:
       matrix:
         ruby:
           - '3.2.3'
-          - '3.3.5'
+          - '3.3.6'
 
     env:
       RAILS_ENV: test
