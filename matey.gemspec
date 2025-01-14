@@ -38,7 +38,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "ahoy_matey", ">= 4.0"
   spec.add_dependency "groupdate", "~> 6.4"
 
-  spec.add_development_dependency "rspec-rails", "~> 5.0"
+  spec.add_development_dependency "rspec-rails", "~> 7.1"
   spec.add_development_dependency "factory_bot_rails", "~> 6.0"
   spec.add_development_dependency "sprockets-rails", "~> 3.2.2"
   spec.add_development_dependency "sqlite3", "~> 1.0"
