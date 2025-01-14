@@ -1,7 +1,7 @@
 PATH
   remote: /workspaces/matey
   specs:
-    matey (0.2.0)
+    matey (0.2.1)
       ahoy_matey (>= 4.0)
       groupdate (~> 6.4)
       view_component (~> 3.9)
@@ -349,4 +349,4 @@ RUBY VERSION
    ruby 3.3.6p108
 
 BUNDLED WITH
-   2.4.10
+   2.5.22
